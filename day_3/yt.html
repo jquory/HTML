@@ -20,10 +20,16 @@
                 width="100"
             />
             <nav>
-                <label>Search</label>
-                <input type="text" placeholder="Search" />
+                <input
+                    type="text"
+                    id="input"
+                    placeholder="Search"
+                    onchange="search()"
+                />
+                <button id="btn">Cari</button>
             </nav>
         </header>
+        <hr />
         <aside style="width: 20%; float: left; height: 50vh">
             <ul>
                 <li><a href="index.html">Tambah</a></li>
@@ -32,27 +38,24 @@
                 <li><a href="yt.html">Youtube</a></li>
             </ul>
         </aside>
-        <section>
-            <h3>Tambah data</h3>
-            <form>
-                <label>Nama</label>
-                <input type="text" placeholder="Nama" required /> <br />
-                <label>Umur</label>
-                <input type="number" placeholder="Umur" required /> <br />
-                <label>Hobi</label>
-                <select>
-                    <option selected>Main Bola</option>
-                    <option>Main Hujan</option>
-                    <option>Main Game</option>
-                </select>
-
-                <br />
-                <button type="submit">Kirim</button>
-            </form>
-        </section>
+        <section id="iframe"></section>
+        <hr />
         <footer>&copy; 2023 Kemas Muhammad Qori Ichsan</footer>
 
         <!-- <button id="btn">klik</button> -->
-        <script src="index.js"></script>
+        <script type="text/javascript">
+            const iframe = document.createElement("iframe");
+
+            const search = () => {
+                const input = document.getElementById("input").value;
+                iframe.src = `https://www.youtube.com/embed/${input}`;
+                iframe.width = "860";
+                iframe.height = "515";
+                iframe.frameborder = "0";
+                iframe.allow = "accelerometer";
+                const frame = document.getElementById("iframe");
+                frame.appendChild(iframe);
+            };
+        </script>
     </body>
 </html>
