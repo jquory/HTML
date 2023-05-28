@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ITCamp BRI</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="login.css" />
+    </head>
+    <body>
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form action="./register.html" method="post">
+            <h3>Login Here</h3>
+
+            <label for="username">Username</label>
+            <input
+                type="text"
+                placeholder="Email or Phone"
+                id="username"
+                required
+            />
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                required
+            />
+
+            <button type="submit" onclick="Login()">Log In</button>
+            <div class="social">
+                <div class="go">
+                    <i class="fas fa-user-shield"></i>
+                    <a href="login.html" style="text-decoration: none">Login</a>
+                </div>
+                <div class="fb">
+                    <i class="fas fa-user-plus"></i>
+                    <a href="register.html" style="text-decoration: none"
+                        >Register</a
+                    >
+                </div>
+            </div>
+        </form>
+
+        <script>
+            const database = [
+                {
+                    email: "test@example",
+                    username: "test",
+                    fullname: "Test Name",
+                    password: "password",
+                    age: "12",
+                    verified: false,
+                },
+                {
+                    email: "gue@example",
+                    username: "gue",
+                    fullname: "Gue",
+                    password: "password",
+                    age: "12",
+                    verified: true,
+                },
+                {
+                    email: "loe@example",
+                    username: "loe",
+                    fullname: "Loe",
+                    password: "password",
+                    age: "12",
+                    verified: false,
+                },
+                {
+                    email: "dia@example",
+                    username: "dia",
+                    fullname: "Dia",
+                    password: "password",
+                    age: "12",
+                    verified: false,
+                },
+            ];
+
+            const Login = () => {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+
+                const validate = database.find(
+                    (a) => a.username === username && a.password === password
+                );
+                const storage = localStorage.getItem("register");
+                const data = JSON.parse(storage);
+                if (validate) {
+                    alert("Login Berhasil");
+                    window.location.href = "index.html";
+                } else if (
+                    data.username === username &&
+                    data.password === password
+                ) {
+                    alert("Login Berhasil");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Username atau password salah!");
+                    window.location.href = "login.html";
+                }
+            };
+        </script>
+    </body>
+</html>

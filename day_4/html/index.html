@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <h1>Register</h1>
+        <label for="">Email</label>
+        <input type="email" placeholder="email" id="email" /> <br />
+        <label for="">Username</label>
+        <input type="text" id="username" placeholder="Username" /> <br />
+        <label for="">Password</label>
+        <input type="password" name="" placeholder="Username" id="password" />
+        <button id="btnRegister" onclick="register()">Register</button>
+
+        <hr /> -->
+
+        <nav></nav>
+
+        <div class="main">
+            <table id="table" class="styled-table">
+                <thead>
+                    <th>Email</th>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Status</th>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                        <td>Orang@gmail.com</td>
+                        <td>Orang Aring</td>
+                        <td>21</td>
+                        <td id="verified" class="">Verified</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            const database = [
+                {
+                    email: "test@example",
+                    username: "test",
+                    fullname: "Test Name",
+                    password: "password",
+                    age: "12",
+                    verified: false,
+                },
+                {
+                    email: "gue@example",
+                    username: "gue",
+                    fullname: "Gue",
+                    password: "password",
+                    age: "12",
+                    verified: true,
+                },
+                {
+                    email: "loe@example",
+                    username: "loe",
+                    fullname: "Loe",
+                    password: "password",
+                    age: "12",
+                    verified: false,
+                },
+                {
+                    email: "dia@example",
+                    username: "dia",
+                    fullname: "Dia",
+                    password: "password",
+                    age: "12",
+                    verified: false,
+                },
+            ];
+            const table = document.getElementById("tbody");
+
+            for (let i = 0; i < database.length; i++) {
+                table.innerHTML += `<td>${database[i].email}</td>
+                <td>${database[i].fullname}</td>
+                <td>${database[i].age}</td>
+                <td>${
+                    database[i].verified === false ? "Not verified" : "Verified"
+                }</td>
+                `;
+            }
+        </script>
+
+        <!-- <main class="wrapper">
+            <nav class="nav">
+                <div class="nav-logo"></div>
+                <div class="nav-item"></div>
+            </nav>
+            <section class="container-product">
+                <h1>Produk Terlaris</h1>
+                <div class="product-section">
+                    <div class="product"></div>
+                    <div class="product"></div>
+                    <div class="product"></div>
+                    <div class="product"></div>
+                </div>
+            </section>
+        </main> -->
+    </body>
+</html>
