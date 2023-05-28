@@ -61,7 +61,7 @@
                         </div>
                         <div class="title">
                             <h2>Make Up</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="title">
                             <h2>Make Up</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="title">
                             <h2>Make Up</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -106,7 +106,7 @@
                         </div>
                         <div class="title">
                             <h2>Make Up</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="title">
                             <h2>Lips Stick</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="title">
                             <h2>Bedak</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -177,7 +177,7 @@
                         </div>
                         <div class="title">
                             <h2>Bedak juga</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -192,7 +192,7 @@
                         </div>
                         <div class="title">
                             <h2>Lips stick lop</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -207,7 +207,7 @@
                         </div>
                         <div class="title">
                             <h2>Mirip Cet</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -222,7 +222,7 @@
                         </div>
                         <div class="title">
                             <h2>lips stick guling</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -237,7 +237,7 @@
                         </div>
                         <div class="title">
                             <h2>Sabun keknya</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -252,7 +252,7 @@
                         </div>
                         <div class="title">
                             <h2>Sabun Item</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -267,7 +267,7 @@
                         </div>
                         <div class="title">
                             <h2>Make Up</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -282,7 +282,7 @@
                         </div>
                         <div class="title">
                             <h2>Bedak coklat</h2>
-                            <p>Rp. 130.000</p>
+                            <p>Rp 130.000</p>
                             <div class="btn_beli">
                                 <button class="beli">Beli</button>
                                 <button class="keranjang">Keranjang</button>
@@ -360,7 +360,7 @@
                         placeholder="Sejuta Rupiah"
                         title="Inpit title"
                         name="input-name"
-                        type="text"
+                        type="number"
                         class="input_field"
                         id="price"
                     />
@@ -438,7 +438,11 @@
                 titleElement.textContent = nameValue;
 
                 let priceElement = document.createElement("p");
-                priceElement.textContent = priceValue;
+                priceElement.textContent = new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    maximumSignificantDigits: 1,
+                }).format(priceValue);
 
                 let buttonDiv = document.createElement("div");
                 buttonDiv.classList.add("btn_beli");
