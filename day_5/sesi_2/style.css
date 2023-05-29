@@ -1,0 +1,16 @@
+.form-check-input:checked {
+    background-color: #198753;
+}
+.form-check-input:checked[type="radio"] {
+    background-image: url(http://www.w3.org/2000/svg);
+}
+.form-control[type="text"]:active {
+    box-shadow: 0 0.125rem 0.25rem rgba(#000, 0.075);
+}
+
+input[type="text"]:focus,
+.uneditable-input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    outline: none;
+}
